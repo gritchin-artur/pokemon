@@ -5,9 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/index.css" />
-        <title>JS starter</title>
+        <title>Pokémon</title>
     </head>
     <body>
+        <div>
+            <h1>Pokémon Finder</h1>
+            <p id="lable">Choose from the 1000 Pokemon</p>
+            <div class="input-group">
+                <input
+                    type="number"
+                    id="pokemonNumber"
+                    placeholder="Enter Pokémon number"
+                />
+                <button id="searchButton">Search</button>
+            </div>
+            <div class="pokemon-card" id="pokemonCard"></div>
+        </div>
         <script type="module" src="./src/init.js"></script>
     </body>
 </html>

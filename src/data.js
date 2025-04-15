@@ -1,3 +1,8 @@
-const data = {};
+import getPokemon from '../api/getPokemon.js';
+import pokemonCard from './components/pokemonCard.js';
 
-export default data;
+const getData = async (id) => {
+    pokemonCard(await getPokemon(id));
+};
+
+export default getData;

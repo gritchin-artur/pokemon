@@ -1,1 +1,3 @@
-import data from './data.js';
+import clickButton from './events/clickSearch.Btn.js';
+
+clickButton();
