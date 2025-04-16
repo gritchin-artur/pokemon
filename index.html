@@ -5,12 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/index.css" />
+        <link rel="icon" type="image/svg+xml" href="./img/pokemon-icon.png" />
         <title>Pokémon</title>
     </head>
     <body>
-        <div>
+        <div class="mainContainer">
+            <img
+                class="mainImg"
+                src="./img/vecteezy_pokemon-logo-png-pokemon-icon-transparent-png_27127591.png"
+                alt="pokemon-title"
+            />
             <h1>Pokémon Finder</h1>
-            <p id="lable">Choose from the 1000 Pokemon</p>
             <div class="input-group">
                 <input
                     type="number"
@@ -19,7 +24,9 @@
                 />
                 <button id="searchButton">Search</button>
             </div>
-            <div class="pokemon-card" id="pokemonCard"></div>
+            <div class="pokemon-card-container">
+                <div class="pokemon-card" id="pokemonCard"></div>
+            </div>
         </div>
         <script type="module" src="./src/init.js"></script>
     </body>

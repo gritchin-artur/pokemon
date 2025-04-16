@@ -1,10 +1,10 @@
-import pokemonCard from '../components/pokemonCard.js';
 import dom from '../dom.js';
-import getData from '../data.js';
+import defaultMessage from '../handlers/defaultMessage.js';
 
 const clickButton = () => {
     dom.button.addEventListener('click', () => {
-        getData(dom.input.value);
+        const param = dom.input.value;
+        defaultMessage(param);
     });
 };
 

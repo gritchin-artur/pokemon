@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    padding-bottom: 5vw;
 }
 
 .container {
@@ -19,11 +20,17 @@ body {
     padding: 30px;
 }
 
+.mainImg {
+    height: 20vw;
+}
+
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 0;
 }
 
 .input-box {
@@ -32,6 +39,10 @@ h1 {
     align-items: center;
     gap: 10px;
     margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: center;
 }
 
 input {
@@ -67,6 +78,11 @@ button:hover {
     background-color: #e91e63;
 }
 
+.pokemon-card-container {
+    display: flex;
+    justify-content: center;
+}
+
 .pokemon-card {
     margin-top: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -75,8 +91,9 @@ button:hover {
     padding: 25px;
     border-radius: 20px;
     display: none;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column;
+    align-items: center; */
+    gap: 2vw;
     animation: fadeIn 0.4s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }

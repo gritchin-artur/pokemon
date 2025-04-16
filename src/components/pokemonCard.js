@@ -3,38 +3,48 @@ import dom from '../dom.js';
 const pokemonCard = (pokemon) => {
     console.log(pokemon);
     dom.card.innerHTML = '';
-    if (pokemon) {
-        dom.card.style.display = 'flex';
 
-        const namePokemon = document.createElement('h2');
-        namePokemon.classList.add('pokemon-name');
-        namePokemon.innerText = pokemon.name;
+    dom.card.style.display = 'inline-flex';
 
-        const imgPokemon = document.createElement('img');
-        imgPokemon.classList.add('pokemonImage');
-        imgPokemon.src = pokemon.sprites.back_default;
+    const imgContainer = document.createElement('div');
 
-        const propertiesContainer = document.createElement('div');
-        propertiesContainer.classList.add('propertiesContainer');
+    const namePokemon = document.createElement('h2');
+    namePokemon.classList.add('pokemon-name');
+    namePokemon.innerText = pokemon.name;
 
-        const abilitiesTitle = document.createElement('h3');
-        abilitiesTitle.classList.add('abilitiesTitle');
-        abilitiesTitle.innerHTML = 'Abilities:';
+    const frontImgPokemon = document.createElement('img');
+    frontImgPokemon.classList.add('pokemonImage');
+    frontImgPokemon.src = pokemon.sprites.front_default;
 
-        dom.card.append(namePokemon, imgPokemon, propertiesContainer);
+    const propertiesContainer = document.createElement('div');
+    propertiesContainer.classList.add('propertiesContainer');
 
-        propertiesContainer.append(abilitiesTitle);
-    }
+    imgContainer.append(namePokemon, frontImgPokemon);
+
+    dom.card.append(imgContainer, propertiesContainer);
+
+    const abilitiesTitle = document.createElement('h3');
+    abilitiesTitle.classList.add('abilitiesTitle');
+    abilitiesTitle.innerHTML = 'Abilities:';
+
+    propertiesContainer.appendChild(abilitiesTitle);
+
+    pokemon.abilities.forEach((ab) => {
+        const ability = document.createElement('p');
+        ability.innerHTML = ab.ability.name;
+        propertiesContainer.appendChild(ability);
+    });
+
+    const statisticsTitle = document.createElement('h3');
+    statisticsTitle.innerHTML = 'Statistics:';
+
+    propertiesContainer.appendChild(statisticsTitle);
+
+    pokemon.stats.forEach((stat) => {
+        const statistic = document.createElement('p');
+        statistic.innerHTML = `${stat.stat.name}: ${stat.base_stat}`;
+        propertiesContainer.appendChild(statistic);
+    });
 };
 
 export default pokemonCard;
-
-//   Abilities:
-// good-as-gold
-// Statistics:
-// hp : 87
-// attack : 60
-// defense : 95
-// special-attack : 133
-// special-defense : 91
-// speed : 84
