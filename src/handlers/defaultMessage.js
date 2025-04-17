@@ -1,5 +1,5 @@
 import dom from '../dom.js';
-import getData from '../data.js'
+import getData from './getData.js';
 
 const defaultMessage = (param) => {
     if (!dom.input.value) {
